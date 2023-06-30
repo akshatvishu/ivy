@@ -189,7 +189,7 @@ def tanhshrink(
 @to_ivy_arrays_and_back
 def relu_(x, name=None):
     ret = ivy.relu(x)
-    ivy.inplace_update(x, ret)
+    ivy.inplace_update(x, ret, ensure_in_backend=True)
     return x
 
 
